@@ -8,7 +8,19 @@
 </head>
 
 <body>
-    dit is de index.html file <%= test || 'default' %>
+    <form action="/boodschappenlijst" method="post">
+        <label>
+            <input type="text" name="BoodschappenlijstItem" value="<%= locals.firstName %>" />
+        </label>
+        <button type="submit">toevoegen</button>
+    </form>
+    <form action="/boodschappenlijst" method="delete">
+        <label>
+            <input type="text" name="BoodschappenlijstItemVerwijderen" value="<%= locals.secondName %>" />
+        </label>
+        <button type="submit">verwijderen</button>
+        <%= test || 'default' %>
+    </form>
 </body>
 
 </html>
