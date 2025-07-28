@@ -6,11 +6,12 @@ router.get('/', (req, res) => {
     res.render('index', { test: Boodschappenlijst })
 })
 
-router.post('/', (req, res) => {
+router.post('/', (req, res, next) => {
     console.log(req.body.BoodschappenlijstItem)
     const itemInLijstje = `item ID = ${Boodschappenlijst.length} ` + req.body.BoodschappenlijstItem
     Boodschappenlijst.push(itemInLijstje)
     res.render("index", { test: Boodschappenlijst })
+    next()
 })
 
 router.delete('/', (req, res) => {
