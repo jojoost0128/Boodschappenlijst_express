@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
     res.render('index', { test: Boodschappenlijst })
 })
 
-router.post('/', (req, res, next) => {
+router.post('/addItem', (req, res, next) => {
     console.log(req.body.BoodschappenlijstItem)
     const itemInLijstje = `item ID = ${Boodschappenlijst.length} ` + req.body.BoodschappenlijstItem
     Boodschappenlijst.push(itemInLijstje)
@@ -14,10 +14,10 @@ router.post('/', (req, res, next) => {
     next()
 })
 
-router.delete('/', (req, res) => {
+router.post('/deleteItem', (req, res) => {
     const itemOmTeVerwijderen = req.body.BoodschappenlijstItemVerwijderen
     console.log(itemOmTeVerwijderen)
-    iets.splice(Number(itemOmTeVerwijderen) - 1, 1)
+    Boodschappenlijst.splice(Number(itemOmTeVerwijderen) - 1, 1)
     res.render("index", { test: Boodschappenlijst })
 })
 

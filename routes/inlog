@@ -1,0 +1,15 @@
+const express = require('express')
+const router = express.Router()
+const ontwerp = "Hello World"
+const gebruikers = { "joost": "wachtwoord" }
+
+router.get('/', (req, res) => {
+    res.render('inlog', { wat: ontwerp })
+})
+
+router.get('/gebruiker', (req, res) => {
+    console.log(req.body.Gebruikersnaam)
+})
+
+
+module.exports = router

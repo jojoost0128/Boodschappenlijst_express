@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    de inlogscherm komt hier <%= locals.wat || 'default' %>
+</body>
+<form action="/boodschappenlijst/addItem" method="post">
+    Gebruikersnaam
+    <label>
+        <input type="text" name="Gebruikersnaam" value="<%= locals.Gebruikersnaam %>" />
+    </label>
+    Wachtwoord
+    <label>
+        <input type="text" name="Wachtwoord" value="<%= locals.Wachtwoord %>" />
+    </label>
+    <button type="submit">inloggen</button>
+</form>
+
+</html>
